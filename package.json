@@ -8,6 +8,7 @@
     "@fontsource/bree-serif": "^4.5.0",
     "@fontsource/open-sans": "^4.5.0",
     "@fontsource/roboto": "^4.5.0",
+    "babel-plugin-styled-components": "^1.13.2",
     "gatsby": "^3.8.1",
     "gatsby-plugin-gatsby-cloud": "^2.8.1",
     "gatsby-plugin-image": "^1.8.0",
