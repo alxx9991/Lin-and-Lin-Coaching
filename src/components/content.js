@@ -14,7 +14,7 @@ const ContentsContainer = styled.div`
   .content-inner {
     display: flex;
     flex-direction: column;
-    width: 960px;
+    width: 870px;
     h2 {
       font-family: "Roboto";
       font-weight: 10;
