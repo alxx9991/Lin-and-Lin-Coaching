@@ -15,7 +15,7 @@ const LayoutContainer = styled.div`
   flex-direction: column; ;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, active }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,7 +31,10 @@ const Layout = ({ children }) => {
   if (!menuVisible) {
     return (
       <LayoutContainer>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Header
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          active={active}
+        />
         <MobileHeader
           siteTitle={data.site.siteMetadata?.title || `Title`}
           setMenuVisible={setMenuVisible}
@@ -45,13 +48,16 @@ const Layout = ({ children }) => {
   } else {
     return (
       <LayoutContainer>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Header
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          active={active}
+        />
         <MobileHeader
           siteTitle={data.site.siteMetadata?.title || `Title`}
           setMenuVisible={setMenuVisible}
           menuVisible={menuVisible}
         />
-        <MobileMenu></MobileMenu>
+        <MobileMenu active={active}></MobileMenu>
       </LayoutContainer>
     )
   }

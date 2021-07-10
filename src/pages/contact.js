@@ -9,7 +9,7 @@ const ContactDetailsWrapper = styled.div`
 `
 
 const ContactPage = () => (
-  <Layout>
+  <Layout active="contact">
     <h2>Contact Me</h2>
     <p>
       If you are interested in having lessons with me, feel free to send me a

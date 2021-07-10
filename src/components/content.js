@@ -21,9 +21,14 @@ const ContentsContainer = styled.div`
       font-weight: 10;
       font-size: 28px;
     }
+
     h3 {
       font-family: "Open Sans";
+      font-size: 16px;
+      margin-bottom: 0;
+      margin-top: 20px;
     }
+
     p {
       font-family: "Open Sans";
     }

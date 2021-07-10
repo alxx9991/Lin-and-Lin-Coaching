@@ -23,11 +23,13 @@ const NavBar = styled.div`
     padding-left: 20px;
     padding-right: 20px;
 
-    li.navbar-item {
+    li {
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 4px;
+      margin-left: 5px;
+      margin-bottom: -4px;
 
       a {
         font-family: "Roboto";
@@ -38,12 +40,18 @@ const NavBar = styled.div`
         align-items: center;
         font-size: 20px;
         text-decoration: none;
-        color: #58595b;
+        color: #555555;
       }
     }
 
     li.navbar-item:hover {
-      background-color: #eeeeee;
+      a {
+        color: #215a9a;
+      }
+    }
+
+    li.navbar-item-active {
+      background-color: #ffffff;
 
       a {
         color: #215a9a;
@@ -77,7 +85,7 @@ const LogoContainer = styled.div`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, active }) => (
   <HeaderContainer>
     <LogoContainer>
       <StaticImage
@@ -90,16 +98,28 @@ const Header = ({ siteTitle }) => (
     <NavBar>
       <div className="above-navbar"></div>
       <ul>
-        <li className="navbar-item">
+        <li
+          className={active === "index" ? "navbar-item-active" : "navbar-item"}
+        >
           <Link to="/">&nbsp;&nbsp;Home&nbsp;&nbsp;</Link>
         </li>
-        <li className="navbar-item">
+        <li
+          className={
+            active === "sample-videos" ? "navbar-item-active" : "navbar-item"
+          }
+        >
           <Link to="/sample-videos">&nbsp;&nbsp;Sample Videos&nbsp;&nbsp;</Link>
         </li>
-        <li className="navbar-item">
+        <li
+          className={active === "about" ? "navbar-item-active" : "navbar-item"}
+        >
           <Link to="/about">&nbsp;&nbsp;About Me&nbsp;&nbsp;</Link>
         </li>
-        <li className="navbar-item">
+        <li
+          className={
+            active === "contact" ? "navbar-item-active" : "navbar-item"
+          }
+        >
           <Link to="/contact">&nbsp;&nbsp;Contact&nbsp;&nbsp;</Link>
         </li>
       </ul>

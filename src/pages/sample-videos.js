@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Video from "../components/video"
 
 const SampleVideoPage = () => (
-  <Layout>
+  <Layout active="sample-videos">
     <h2>Year 11 Advanced - Fundamentals of Differentiation</h2>
     <Video
       height="300"

@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Video from "../components/video"
 
 const AboutPage = () => (
-  <Layout>
+  <Layout active="about">
     <h2>Get to know your coach!</h2>
     <p>
       There is more to know about your coach than just ATAR and other marks, so

@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import Video from "../components/video"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout active="index">
     <Seo title="Home" />
     <h2>Welcome to Sydney's number one HSC coaching!</h2>
     <p>

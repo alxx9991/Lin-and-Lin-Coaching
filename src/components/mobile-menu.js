@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 
 const StyledMobileMenu = styled.div`
   height: 100%;
+  overflow: hidden;
   ul {
     height: 100%;
     display: flex;
@@ -23,29 +24,47 @@ const StyledMobileMenu = styled.div`
         padding-left: 15px;
         display: inline-block;
         font-family: "Roboto";
-        color: #215a9a;
+        color: #555555;
         height: 100%;
         width: 100%;
         text-decoration: none;
       }
     }
+
+    li.navbar-item-active {
+      a {
+        color: #215a9a;
+      }
+    }
   }
 `
 
-const MobileMenu = () => {
+const MobileMenu = ({ active }) => {
   return (
     <StyledMobileMenu>
       <ul>
-        <li className="navbar-item">
+        <li
+          className={active === "index" ? "navbar-item-active" : "navbar-item"}
+        >
           <Link to="/">&nbsp;&nbsp;Home&nbsp;&nbsp;</Link>
         </li>
-        <li className="navbar-item">
+        <li
+          className={
+            active === "sample-videos" ? "navbar-item-active" : "navbar-item"
+          }
+        >
           <Link to="/sample-videos">&nbsp;&nbsp;Sample Videos&nbsp;&nbsp;</Link>
         </li>
-        <li className="navbar-item">
+        <li
+          className={active === "about" ? "navbar-item-active" : "navbar-item"}
+        >
           <Link to="/about">&nbsp;&nbsp;About Me&nbsp;&nbsp;</Link>
         </li>
-        <li className="navbar-item">
+        <li
+          className={
+            active === "contact" ? "navbar-item-active" : "navbar-item"
+          }
+        >
           <Link to="/contact">&nbsp;&nbsp;Contact&nbsp;&nbsp;</Link>
         </li>
       </ul>
