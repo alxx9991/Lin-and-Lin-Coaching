@@ -12,7 +12,7 @@ import MobileMenu from "./mobile-menu"
 const LayoutContainer = styled.div`
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; ;
 `
 
 const Layout = ({ children }) => {
@@ -25,77 +25,36 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  let isSSR = false
 
-  if (typeof window == "undefined") {
-    isSSR = true
-  }
   const [menuVisible, setMenuVisible] = React.useState(false)
-  const [windowSize, setWindowSize] = React.useState({
-    width: isSSR ? 1200 : window.innerWidth,
-    height: isSSR ? 800 : window.innerHeight,
-  })
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", () => {
-        setWindowSize({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        })
-      })
-    }
-  }, [])
-
-  if (typeof window !== "undefined") {
-    window.removeEventListener("resize", () => {
-      if (typeof window !== "undefined") {
-        window.addEventListener("resize", () => {
-          setWindowSize({
-            width: window.innerWidth,
-            height: window.innerHeight,
-          })
-        })
-      }
-    })
+  if (!menuVisible) {
+    return (
+      <LayoutContainer>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <MobileHeader
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          setMenuVisible={setMenuVisible}
+          menuVisible={menuVisible}
+        />
+        <ContentsContainer>
+          <div className="content-inner">{children}</div>
+        </ContentsContainer>
+      </LayoutContainer>
+    )
+  } else {
+    return (
+      <LayoutContainer>
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <MobileHeader
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          setMenuVisible={setMenuVisible}
+          menuVisible={menuVisible}
+        />
+        <MobileMenu></MobileMenu>
+      </LayoutContainer>
+    )
   }
-
-  if (windowSize.width < 600) {
-    if (!menuVisible) {
-      return (
-        <LayoutContainer>
-          <MobileHeader
-            siteTitle={data.site.siteMetadata?.title || `Title`}
-            setMenuVisible={setMenuVisible}
-            menuVisible={menuVisible}
-          />
-          <ContentsContainer>
-            <div className="content-inner">{children}</div>
-          </ContentsContainer>
-        </LayoutContainer>
-      )
-    } else {
-      return (
-        <LayoutContainer>
-          <MobileHeader
-            siteTitle={data.site.siteMetadata?.title || `Title`}
-            setMenuVisible={setMenuVisible}
-            menuVisible={menuVisible}
-          />
-          <MobileMenu></MobileMenu>
-        </LayoutContainer>
-      )
-    }
-  }
-
-  return (
-    <LayoutContainer>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <ContentsContainer>
-        <div className="content-inner">{children}</div>
-      </ContentsContainer>
-    </LayoutContainer>
-  )
 }
 
 Layout.propTypes = {

@@ -5,12 +5,16 @@ import styled from "styled-components"
 import "@fontsource/bree-serif" // Defaults to weight 400 with all styles included.
 import "@fontsource/open-sans" // Defaults to weight 400 with all styles included.
 
-const HeaderContainer = styled.div`
+const MobileHeaderContainer = styled.div`
   display: flex;
   width: 100%;
   background-color: #f6f6f6;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
 
   .invisible {
     visibility: hidden;
@@ -21,7 +25,7 @@ const HeaderContainer = styled.div`
     margin-left: 15px;
   }
 `
-const LogoContainer = styled.div`
+const MobileLogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,33 +33,33 @@ const LogoContainer = styled.div`
 
 const MobileHeader = ({ siteTitle, setMenuVisible, menuVisible }) => {
   return (
-    <HeaderContainer>
+    <MobileHeaderContainer>
       <StaticImage
         className="visible"
         src="../images/hamburger-menu.svg"
-        alt="Lin and Lin Education Logo"
+        alt="Hamburger menu icon"
         width={50}
         height={50}
         onClick={() => {
           setMenuVisible(!menuVisible)
         }}
       ></StaticImage>
-      <LogoContainer>
+      <MobileLogoContainer>
         <StaticImage
           src="../images/lin-logo.svg"
           alt="Lin and Lin Education Logo"
-          width={110}
-          height={110}
+          width={80}
+          height={80}
         />
-      </LogoContainer>
+      </MobileLogoContainer>
       <StaticImage
         src="../images/hamburger-menu.svg"
-        alt="Lin and Lin Education Logo"
+        alt="invisible hamburger icon"
         width={50}
         height={50}
         className="invisible"
       ></StaticImage>
-    </HeaderContainer>
+    </MobileHeaderContainer>
   )
 }
 

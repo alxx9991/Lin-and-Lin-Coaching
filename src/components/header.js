@@ -57,6 +57,10 @@ const HeaderContainer = styled.div`
   width: 100%;
   justify-content: space-between;
   background-color: #f6f6f6;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `
 const LogoContainer = styled.div`
   display: flex;
