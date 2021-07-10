@@ -9,6 +9,7 @@ import "@fontsource/open-sans" // Defaults to weight 400 with all styles include
 const NavBar = styled.div`
   display: flex;
   flex-direction: column;
+
   .above-navbar {
     flex: 1 1 0;
   }
@@ -27,7 +28,6 @@ const NavBar = styled.div`
       justify-content: center;
       align-items: center;
       border-radius: 4px;
-      margin: 10px 10px;
 
       a {
         font-family: "Roboto";

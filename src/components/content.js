@@ -14,7 +14,8 @@ const ContentsContainer = styled.div`
   .content-inner {
     display: flex;
     flex-direction: column;
-    width: 870px;
+    max-width: 1080px;
+    width: 100%;
     h2 {
       font-family: "Roboto";
       font-weight: 10;
@@ -25,6 +26,18 @@ const ContentsContainer = styled.div`
     }
     p {
       font-family: "Open Sans";
+    }
+    .video {
+      max-width: 1080px;
+      padding-top: 56.25%;
+      position: relative;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 `
