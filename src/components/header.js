@@ -62,18 +62,24 @@ const NavBar = styled.div`
 
 const HeaderContainer = styled.div`
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #f6f6f6;
-
+  width: 100%;
   @media only screen and (max-width: 600px) {
     display: none;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1130px;
   }
 `
 const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding-left: 20px;
   h2 {
     display: inline;
@@ -87,43 +93,51 @@ const LogoContainer = styled.div`
 
 const Header = ({ siteTitle, active }) => (
   <HeaderContainer>
-    <LogoContainer>
-      <StaticImage
-        src="../images/lin-logo.svg"
-        alt="Lin and Lin Education Logo"
-        width={110}
-        height={110}
-      />
-    </LogoContainer>
-    <NavBar>
-      <div className="above-navbar"></div>
-      <ul>
-        <li
-          className={active === "index" ? "navbar-item-active" : "navbar-item"}
-        >
-          <Link to="/">&nbsp;&nbsp;Home&nbsp;&nbsp;</Link>
-        </li>
-        <li
-          className={
-            active === "sample-videos" ? "navbar-item-active" : "navbar-item"
-          }
-        >
-          <Link to="/sample-videos">&nbsp;&nbsp;Sample Videos&nbsp;&nbsp;</Link>
-        </li>
-        <li
-          className={active === "about" ? "navbar-item-active" : "navbar-item"}
-        >
-          <Link to="/about">&nbsp;&nbsp;About Me&nbsp;&nbsp;</Link>
-        </li>
-        <li
-          className={
-            active === "contact" ? "navbar-item-active" : "navbar-item"
-          }
-        >
-          <Link to="/contact">&nbsp;&nbsp;Contact&nbsp;&nbsp;</Link>
-        </li>
-      </ul>
-    </NavBar>
+    <div className="header-inner">
+      <LogoContainer>
+        <StaticImage
+          src="../images/lin-logo.svg"
+          alt="Lin and Lin Education Logo"
+          width={110}
+          height={110}
+        />
+      </LogoContainer>
+      <NavBar>
+        <div className="above-navbar"></div>
+        <ul>
+          <li
+            className={
+              active === "index" ? "navbar-item-active" : "navbar-item"
+            }
+          >
+            <Link to="/">&nbsp;&nbsp;Home&nbsp;&nbsp;</Link>
+          </li>
+          <li
+            className={
+              active === "sample-videos" ? "navbar-item-active" : "navbar-item"
+            }
+          >
+            <Link to="/sample-videos">
+              &nbsp;&nbsp;Sample Videos&nbsp;&nbsp;
+            </Link>
+          </li>
+          <li
+            className={
+              active === "about" ? "navbar-item-active" : "navbar-item"
+            }
+          >
+            <Link to="/about">&nbsp;&nbsp;About Me&nbsp;&nbsp;</Link>
+          </li>
+          <li
+            className={
+              active === "contact" ? "navbar-item-active" : "navbar-item"
+            }
+          >
+            <Link to="/contact">&nbsp;&nbsp;Contact&nbsp;&nbsp;</Link>
+          </li>
+        </ul>
+      </NavBar>
+    </div>
   </HeaderContainer>
 )
 

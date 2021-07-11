@@ -12,7 +12,7 @@ import MobileMenu from "./mobile-menu"
 const LayoutContainer = styled.div`
   height: 100%;
   display: flex;
-  flex-direction: column; ;
+  flex-direction: column;
 `
 
 const Layout = ({ children, active }) => {
