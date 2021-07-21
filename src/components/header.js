@@ -121,13 +121,13 @@ const Header = ({ siteTitle, active }) => (
               &nbsp;&nbsp;Sample Videos&nbsp;&nbsp;
             </Link>
           </li>
-          <li
+          {/* <li
             className={
               active === "about" ? "navbar-item-active" : "navbar-item"
             }
           >
             <Link to="/about">&nbsp;&nbsp;About Me&nbsp;&nbsp;</Link>
-          </li>
+          </li> */}
           <li
             className={
               active === "contact" ? "navbar-item-active" : "navbar-item"

@@ -10,11 +10,11 @@ const SampleVideoPage = () => (
       videoSrcURL="https://www.youtube.com/embed/klicZfiCy78"
       videoTitle="900hp Nitrous Hellcat battles 900hp Corvette! & MORE! Best of Street Racing - July's Top 10"
     ></Video>{" "}
-    <h2>HSC Extension 1 - Fundamentals of Integration</h2>
+    <h2>HSC Extension 1 - Introduction to Vectors</h2>
     <Video
       height="300"
-      videoSrcURL="https://www.youtube.com/embed/k0pHz_fLpaI"
-      videoTitle="1400HP NISSAN GTR Total Car Concept *337km/h* REVIEW on AUTOBAHN by AutoTopNL"
+      videoSrcURL="https://www.youtube.com/embed/B9mD7oJscmI"
+      videoTitle="Introduction to Vectors - 3U HSC (New Syllabus)"
     ></Video>{" "}
     <h2>HSC Extension 2 - 2018 HSC Challenge question</h2>
     <Video
